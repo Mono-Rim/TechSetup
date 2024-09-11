@@ -1,0 +1,241 @@
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5; /* Cor de fundo clara */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50; /* Azul escuro elegante */
+    color: #ecf0f1; /* Texto branco claro */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between; /* Espaça o conteúdo */
+    align-items: center; /* Alinha itens verticalmente */
+    position: relative;
+}
+
+/* Título */
+h1 {
+    margin: 0;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+/* Hover no título */
+h1:hover {
+    color: #e67e22; /* Laranja suave ao passar o cursor */
+}
+
+/* Container de perfil e logout */
+#perfil {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    margin-right: 20px; /* Espaçamento entre ícone e logout */
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#perfil a {
+    color: #ecf0f1; /* Texto branco claro */
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#perfil a:hover {
+    color: #e67e22; /* Laranja suave ao passar o cursor */
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    color: #2c3e50; /* Azul escuro */
+    margin-right: 10px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7; /* Cinza claro */
+    background-color: #ecf0f1; /* Branco claro */
+    color: #34495e; /* Texto azul escuro */
+    cursor: pointer;
+}
+
+/* Produtos */
+#produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produto {
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #bdc3c7; /* Cinza claro */
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(20%);
+    min-width: 150px;
+    max-width: 12em;
+    max-height: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    justify-content: space-between; /* Espaça o conteúdo */
+    transition: transform 0.3s ease;
+}
+
+.produto img {
+    max-width: 100%;
+    border-bottom: 1px solid #ecf0f1; /* Borda em branco claro */
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.produto h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #2c3e50; /* Azul escuro */
+}
+
+.produto p {
+    margin: 0 0 10px;
+    color: #7f8c8d; /* Cinza suave */
+}
+
+/* Botões */
+.botoes-produto {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: auto; /* Garante que os botões fiquem sempre embaixo */
+}
+
+/* Estilização para o botão de "Adicionar ao Carrinho" */
+/* Estilização para o botão de "Adicionar ao Carrinho" */
+.add-to-cart {
+    display: inline-flex; /* Alinha o texto centralizado */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background-color: #e67e22; /* Laranja suave */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Ocupa toda a largura disponível */
+}
+
+
+.add-to-cart:hover {
+    background-color: #d35400; /* Laranja escuro */
+}
+
+/* Estilização para o botão de "Comprar" */
+/* Estilização para o botão de "Comprar" */
+.comprar {
+    display: inline-flex; /* Alinha o texto centralizado */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background-color: #3498db; /* Azul mais claro */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    text-align: center; /* Centraliza o texto */
+}
+
+.comprar:hover {
+    background-color: #2980b9; /* Azul escuro */
+}
+
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #34495e; /* Azul mais escuro */
+    height: 60px;
+    color: #ecf0f1; /* Texto branco claro */
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    font-size: 1.5em;
+    color: #e67e22; /* Laranja suave */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #d35400; /* Laranja escuro ao passar o cursor */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    #perfil {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .profile-icon img {
+        width: 35px;
+        height: 35px;
+    }
+}

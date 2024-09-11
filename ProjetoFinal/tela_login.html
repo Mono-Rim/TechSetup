@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="style/style_tela_login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="login-form" action="login.php" method="POST">
+                <h2>Login</h2>
+                <div class="dateform">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" required>
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" name="senha" required>
+                    <button id="botLogin" type="submit">Entrar</button>
+                </div>
+                <p>Não tem uma conta? <a href="#" onclick="toggleForms()">Cadastre-se</a></p>
+            </form>
+            <form id="register-form" action="register.php" method="POST" style="display: none;">
+                <h2>Cadastro</h2>
+                <div class="dateform">
+                    <label for="register-nome">Nome:</label>
+                    <input type="text" id="register-nome" name="nome" required>
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="email" required>
+                    <label for="register-senha">Senha:</label>
+                    <input type="password" id="register-senha" name="senha" required>
+                    <button type="submit" onclick="verifyPassword(event)">Cadastrar</button>
+                </div>
+                <p>Já tem uma conta? <a href="#" onclick="toggleForms()">Faça login</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/script_login.js"></script>
+</body>
+</html>

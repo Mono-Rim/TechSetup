@@ -1,0 +1,61 @@
+CREATE DATABASE loja_pc;
+
+USE loja_pc;
+
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    preco DECIMAL(10, 2) NOT NULL,
+    estoque INT NOT NULL,
+    categoria VARCHAR(255),
+    imagem VARCHAR(255)
+);
+
+(processadores)
+INSERT INTO produtos (nome, descricao, preco, estoque, categoria, imagem) VALUES
+('Processador Intel Core i9', 'Processador de alto desempenho para jogos e aplicações pesadas', 2999.99, 10, 'Processadores', 'https://i.imgur.com/2efU7pg.jpg'),
+('Processador Intel Core i3', 'Processador básico para tarefas do dia a dia', 799.99, 20, 'Processadores', 'https://i.imgur.com/cjgrK7W.jpg'),
+('Processador Intel Core i5', 'Processador intermediário para multitarefas e jogos leves', 1499.99, 15, 'Processadores', 'https://i.imgur.com/wOUiqmp.jpg'),
+('Processador Intel Core i7', 'Processador avançado para jogos e aplicações pesadas', 2499.99, 12, 'Processadores', 'https://i.imgur.com/vZOzQoF.jpg');
+
+(monitores)
+INSERT INTO produtos (nome, descricao, preco, estoque, categoria, imagem) VALUES
+('Monitor AOC Hero', 'Monitor Full HD com resolução de 1920x1080 pixels, ideal para tarefas diárias e entretenimento.', 899.99, 30, 'Monitores', 'https://i.imgur.com/HJWpGIr.jpg'),
+('Monitor Samsung T350', 'Monitor 4K Ultra HD com resolução de 3840x2160 pixels, perfeito para edição de vídeo e jogos.', 1999.99, 20, 'Monitores', 'https://i.imgur.com/6vwVDfI.jpg'),
+('Monitor Samsung Odyssey G30', 'Monitor Curvo de 27 polegadas com taxa de atualização de 144Hz, ideal para gamers.', 1499.99, 25, 'Monitores', 'https://i.imgur.com/luXFqeu.jpg'),
+('Monitor Lg Gamer', 'Monitor Curvo de 27 polegadas com taxa de atualização de 144Hz, ideal para gamers.', 1899.99, 25, 'Monitores', 'https://i.imgur.com/e6JEAny.jpg');
+
+(memoria ram)
+INSERT INTO produtos (nome, descricao, preco, estoque, categoria, imagem) VALUES
+('Memoria ram Kingston Fury', 'Memória RAM DDR4 de 8GB com frequência de 2400MHz, ideal para melhorar o desempenho do seu PC.', 299.99, 50, 'Memórias RAM', 'https://i.imgur.com/lRcSm9u.jpg'),
+('Memoria ram Kingston RGB', 'Memória RAM DDR4 de 16GB com frequência de 3200MHz, perfeita para multitarefas e jogos.', 599.99, 40, 'Memórias RAM', 'https://i.imgur.com/19K4z8w.jpg'),
+('Memoria ram Hyperx', 'Memória RAM DDR4 de 32GB com frequência de 3600MHz, ideal para aplicações pesadas e edição de vídeo.', 1199.99, 30, 'Memórias RAM', 'https://i.imgur.com/VBlkuzw.jpg'),
+('Memoria ram Corsair', 'Memória RAM DDR4 de 32GB com frequência de 5400MHz, ideal para aplicações pesadas e edição de vídeo.', 1499.99, 30, 'Memórias RAM', 'https://i.imgur.com/i6synQ8.jpg');
+
+(placa de vídeo)
+INSERT INTO produtos (nome, descricao, preco, estoque, categoria, imagem) VALUES
+('Placa de vídeo gtx 1650', 'Placa de vídeo com 4GB de memória GDDR6, ideal para jogos em Full HD.', 1299.99, 20, 'Placas de Vídeo', 'https://i.imgur.com/f0oFKPk.jpg'),
+('Placa de vídeo gtx 1660 ti', 'Placa de vídeo com 8GB de memória GDDR6, perfeita para jogos em 4K e aplicações de realidade virtual.', 2499.99, 15, 'Placas de Vídeo', 'https://i.imgur.com/DMIcsfG.jpg'),
+('Placa de vídeo rtx 3060', 'Placa de vídeo com 10GB de memória GDDR6, ideal para jogos em alta resolução e edição de vídeo.', 3499.99, 10, 'Placas de Vídeo', 'https://i.imgur.com/9zGuuBf.jpg'),
+('Placa de vídeo rtx 4060', 'Placa de vídeo com 12GB de memória GDDR6, ideal para jogos em alta resolução e edição de vídeo.', 4499.99, 10, 'Placas de Vídeo', 'https://i.imgur.com/oA6q8Cu.jpg');
+
+ 
+CREATE TABLE pessoa (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    imagem VARCHAR(255)
+);
+
+CREATE TABLE carrinho_compras (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_pessoa INT NOT NULL,
+    id_produto INT NOT NULL,
+    quantidade INT NOT NULL,
+    data_adicao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_pessoa) REFERENCES pessoa(id),
+    FOREIGN KEY (id_produto) REFERENCES produtos(id)
+);
+
